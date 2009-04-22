@@ -16,8 +16,8 @@ module Webrat
 		WangResponse.new(response_body, self)
 	end
 
-    def post(url, data)
-      @response_status, @response_headers, @response_body = wang.post(url, data)
+    def post(url, data, h = {})
+      @response_status, @response_headers, @response_body = wang.post(url, data, h['HTTP_REFERER'])
     end
 
     def response_body
